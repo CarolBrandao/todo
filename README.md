@@ -1,5 +1,7 @@
 This project is a simple todo list using typescript, react and redux.
 
+<img src="https://raw.githubusercontent.com/CarolBrandao/todo/master/public/screenshot.png" alt="Screenshot" height="300px">
+
 ## Start project
 
 ### `yarn start`
