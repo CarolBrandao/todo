@@ -1,6 +1,20 @@
 import React from 'react'
+import styled from 'styled-components'
+
 import Todo from './todo'
 import { TodoItem } from '../../types'
+
+const Empty = styled.div`
+  text-align: center;
+  padding: 13px 0px;
+  font-family: system-ui, sans-serif;
+`
+
+const _List = styled.ul`
+  text-align: center;
+  padding: 20px 0px;
+  margin: 0px;
+`
 
 export interface ListOwnProps { 
 }
@@ -18,10 +32,10 @@ type ListProps = LinkDispatchProps & LinkStateProps & ListOwnProps
 
 function List({ todos, toggleTodo } :  ListProps ){
   if(todos.length === 0){
-    return (<span className="empty">Empty</span>)
+    return (<Empty className="empty">Empty</Empty>)
   }
   return (
-    <ul>
+    <_List>
       {todos.map(todo =>
         <Todo
           key={todo.id}
@@ -30,7 +44,7 @@ function List({ todos, toggleTodo } :  ListProps ){
           onClick={() => toggleTodo(todo.id)}
         />
       )}
-    </ul>
+    </_List>
   )
 }
 
